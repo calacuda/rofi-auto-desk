@@ -37,7 +37,7 @@ def load_layout(layout: str) -> bool:
 
 
 def auto_desk_socket() -> str:
-    with open(os.path.expanduser("~/.config/desktop-automater/config.toml"), "rb") as f:
+    with open(os.path.expanduser("~/.config/auto-desk/config.toml"), "rb") as f:
         data = tomllib.load(f)
         return data.get("server").get("listen_socket")
 
@@ -60,7 +60,7 @@ def main():
         load_layout(sys.argv[-1])
     else:
         # print("printing layouts")
-        print_layouts(os.path.expanduser("~/.config/desktop-automater/layouts/"))
+        print_layouts(os.path.expanduser("~/.config/auto-desk/layouts/"))
 
 
 if __name__ == "__main__":
